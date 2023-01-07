@@ -4,6 +4,7 @@
 
 const express = require('express')
 const {response} = require("express");
+const cors = require('cors')
 
 const app = express();
 
@@ -24,7 +25,7 @@ let notes = [
         date: "2022-05-30T19:20:14.298Z",
         important: true
     }]
-
+app.use(cors());
 app.use(express.json())
 
 app.post('/api/notes', (req,res) =>{
